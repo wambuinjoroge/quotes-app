@@ -7,23 +7,23 @@ import Wrapper from "./layouts/Wrapper";
 Vue.use(Router);
 
 export const router = new Router({
+    mode:'history',
     routes:[
         {
-            path:'/hello',
-            name:'hello',
-            components:{
-                wrapper:Wrapper,
-                default:HelloWorld
-
-            }
-        } ,
-        {
             path:'/',
-            name:'test-quote',
-            components:{
-                wrapper:Wrapper,
-                default:NewQuote
+            component: Wrapper,
+            children:[
+            {
+                path:'',
+                name:'HelloWorld',
+                component:HelloWorld
+            },
+            {
+                path:'new-quote',
+                name:'NewQuote',
+                component:NewQuote
             }
-        }
+            ]
+        } ,
     ]
 });
