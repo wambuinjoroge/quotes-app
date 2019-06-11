@@ -14,7 +14,7 @@ export const router = new Router({
             component: Wrapper,
             children:[
             {
-                path:'',
+                path:'hello',
                 name:'HelloWorld',
                 component:HelloWorld
             },
