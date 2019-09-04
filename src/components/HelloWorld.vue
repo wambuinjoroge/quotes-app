@@ -2,11 +2,34 @@
   <div class="hello">
     <h1>{{ message.sayHello }}</h1>
     <p>{{count}}</p>
+    <button @click="increment">Increase Counter</button>&nbsp;
+    <button @click="decrement">Decrease Counter</button>
   </div>
 </template>
 
 <script>
-  import store from '../store'
+
+  import Vue from 'vue'
+  import Vuex from 'vuex'
+
+  Vue.use(Vuex)
+
+  const store = new Vuex.Store({
+    state:{
+      count:0
+    },
+    mutations:{
+      increment(state){
+        state.count ++
+      },
+      decrement(state){
+        state.count --
+      }
+    }
+  });
+//
+// import store from '../store/index'
+
 export default {
   name: 'HelloWorld',
   data: function() {
@@ -19,6 +42,14 @@ export default {
   computed:{
     count(){
       return store.state.count
+    }
+  },
+  methods:{
+    increment(){
+      store.commit('increment')
+    },
+    decrement(){
+      store.commit('decrement')
     }
   }
 }
