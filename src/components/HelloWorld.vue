@@ -1,14 +1,32 @@
 <template>
-  <div class="hello">
-    <h1>{{ message.sayHello }}</h1>
-    <p>{{count}}</p>
-    <button @click="increment">Increase Counter</button>&nbsp;
-    <button @click="decrement">Decrease Counter</button>
-    <br>
-    <br>
-    <br>
-    <router-link :to="{name:'NewQuote'}">Go to New Quote</router-link>
-<!--    <button @click="newQuote">Go to New Quote</button>-->
+
+  <div class="container">
+    <div class="row justify-content-start">
+     <div class="col-md-6 offset-md-2">
+       <h1>{{ message.sayHello }}</h1>
+       <p>{{count}}</p>
+       <button class="btn btn-primary mr-4" @click="decrement">Decrease</button>
+       <button class="btn btn-primary" @click="increment">Increase</button>
+     </div>
+    </div>
+<!--    <div class="row">-->
+<!--      <div class="col-md-3">-->
+<!--        <p>{{count}}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-6">-->
+<!--        <button class="btn btn-primary" @click="increment">Increase</button>&nbsp;-->
+<!--      </div>-->
+<!--      <div class="col-md-6">-->
+<!--        <button class="btn btn-primary" @click="decrement">Decrease</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-3">-->
+<!--        <router-link :to="{name:'NewQuote'}">Go to New Quote</router-link>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 

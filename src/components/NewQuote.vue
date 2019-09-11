@@ -4,7 +4,7 @@
         <br>
         <br>
         <br>
-        <router-link :to="{name:'HelloWorld'}">Back to Hello</router-link>
+        <router-link :to="{name:'HelloWorld'}">Back to Hello World</router-link>
     </div>
 </template>
 
