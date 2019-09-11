@@ -4,6 +4,11 @@
     <p>{{count}}</p>
     <button @click="increment">Increase Counter</button>&nbsp;
     <button @click="decrement">Decrease Counter</button>
+    <br>
+    <br>
+    <br>
+    <router-link :to="{name:'NewQuote'}">Go to New Quote</router-link>
+<!--    <button @click="newQuote">Go to New Quote</button>-->
   </div>
 </template>
 
@@ -24,7 +29,10 @@
       },
       decrement(state){
         state.count --
-      }
+      },
+      // newQuote(){
+      //   return router.push({name:'newQuote'})
+      // }
     }
   });
 //
@@ -45,6 +53,7 @@ export default {
     }
   },
   methods:{
+    //commit mutations in methods
     increment(){
       store.commit('increment')
     },
